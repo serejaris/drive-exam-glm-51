@@ -1,33 +1,17 @@
 # drive-exam-glm-51
 
-CABA driving-exam Telegram Mini App.
-**Model under test:** GLM 5.1 (Zhipu · Z.AI).
-**Bot:** [@glm_51_ris_bot](https://t.me/glm_51_ris_bot).
+CABA driving-exam Telegram Mini App, собранный GLM 5.1 в рамках live про Chinese models 2026-04-24. Репозиторий хранит минимальный app/docs слой конкретной модели.
 
-Part of live stream `chinese-models` (2026-04-24) — see
-[live.sereja.tech/chinese-models](https://live.sereja.tech/chinese-models/).
+## Что внутри
 
-Six clones of the same PRD built in parallel by six different models.
-This repo holds the GLM 5.1 implementation.
+| Путь | Роль |
+|---|---|
+| `docs/` | notes/PRD и материалы реализации |
+| `.env.example` | пример переменных окружения |
+| GitHub Issues | MVP-задача по PRD |
 
-## PRD
+## Границы
 
-[`docs/PRD.md`](./docs/PRD.md) — canonical product spec (mirror of
-[serejaris/tg-drive-exam](https://github.com/serejaris/tg-drive-exam/blob/main/docs/PRD.md)).
-
-## Stack
-
-- Hosting: **Railway** (web + Railway Postgres, Railway Cron for reminders)
-- Frontend/backend: Next.js + TypeScript + Telegram WebApp JS API
-- Bot: grammY / Telegraf via webhook
-- DB: Railway Postgres with Prisma or Drizzle
-
-## Setup
-
-1. Copy `.env.example` to `.env`, fill in the bot token and DB URL.
-2. `npm install`
-3. `npm run dev`
-
-## Acceptance
-
-See [issue #1](../../issues/1) for the MVP task + checklist.
+- Это benchmark/generated repo для одной модели.
+- Не переносить сюда общий driving-exam canon без явного решения.
+- Для сравнения смотреть соседние `drive-exam-*` repos.
